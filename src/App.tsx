@@ -1,5 +1,6 @@
 import "./App.css";
 import "./post";
+import constanCe from "./constance";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           </a>
         </div>
       </header>
-      <section>{/* list */}</section>
+      <constanCe />
       <div>{/* contact */}</div>
     </>
   );
