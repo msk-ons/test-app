@@ -24,8 +24,7 @@ export const Post = (props) => {
             }
           </div>
         </div>
-        <h2 className="font-bold text-lg">{post.title}</h2>
-        <p className="line-clamp-2">{post.content}</p>
+<div dangerouslySetInnerHTML={{ __html: post.content }} className="line-clamp-2" /></div>
       </div>
     </div>
   );
