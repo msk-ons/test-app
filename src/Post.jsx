@@ -8,20 +8,23 @@ export const Post = (props) => {
         <div className="flex justify-between">
           <p className="">{new Date(post.createdAt).toLocaleDateString()}</p>
           <div className="flex">
-            {
-              // post.categoriesが存在し、かつ配列である場合
-              posts.categories && Array.isArray(posts.categories) // カテゴリーをループして表示
-                    {post.categories.map((category, i) => (
-    <p
-      key={i}
-      className="border border-blue-500 rounded text-blue-500 p-1"
-    >
-      {category}
-    </p>
-  ))}
+            {/* post.categoriesが存在し、かつ配列である場合 */}
+            {posts.categories &&
+              Array.isArray(posts.categories) && // カテゴリーをループして表示
+              post.categories.map((category, i) => (
+                <p
+                  key={i}
+                  className="border border-blue-500 rounded text-blue-500 p-1"
+                >
+                  {category}
+                </p>
+              ))}
           </div>
         </div>
-<div dangerouslySetInnerHTML={{ __html: post.content }} className="line-clamp-2" /></div>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.content }}
+          className="line-clamp-2"
+        />
       </div>
     </div>
   );
