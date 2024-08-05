@@ -2,6 +2,8 @@ import { posts } from "./post";
 
 export const Post = (props) => {
   const post = props.p;
+  console.log(post);
+  console.log(post.categories);
   return (
     <div className="border border-black mb-4 w-4/5 mx-auto">
       <div className="p-5">
@@ -10,7 +12,7 @@ export const Post = (props) => {
           <div className="flex">
             {/* post.categoriesが存在し、かつ配列である場合 */}
             {posts.categories &&
-              Array.isArray(posts.categories) && // カテゴリーをループして表示
+              Array.isArray(post.categories) && // カテゴリーをループして表示
               post.categories.map((category, i) => (
                 <p
                   key={i}
