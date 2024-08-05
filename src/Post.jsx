@@ -6,7 +6,7 @@ export const Post = (props) => {
     <div className="border border-black mb-4 w-4/5 mx-auto">
       <div className="p-5">
         <div className="flex justify-between">
-          <p className="">{post.createdAt}</p>
+          <p className="">{new Date(post.createdAt).toLocaleDateString()}</p>
           <div className="flex">
             {
               // post.categoriesが存在し、かつ配列である場合
