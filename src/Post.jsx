@@ -11,12 +11,12 @@ export const Post = (props) => {
           <p className="">{new Date(post.createdAt).toLocaleDateString()}</p>
           <div className="flex">
             {/* post.categoriesが存在し、かつ配列である場合 */}
-            {posts.categories &&
-              Array.isArray(posts.categories) && // カテゴリーをループして表示
+            {post.categories &&
+              Array.isArray(post.categories) && // カテゴリーをループして表示
               post.categories.map((category, i) => (
                 <p
                   key={i}
-                  className="border border-blue-500 rounded text-blue-500 p-1"
+                  className="border border-blue-500 rounded text-blue-500 p-2 ml-1"
                 >
                   {category}
                 </p>
