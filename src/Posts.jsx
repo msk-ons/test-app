@@ -1,5 +1,5 @@
 import { posts } from "./post";
-import { Post } from "./Post";
+import { mainPost } from "./mainPost";
 import { PageTitle } from "./PageTitle";
 
 export const Posts = () => {
@@ -7,7 +7,7 @@ export const Posts = () => {
     <div className="mx-auto">
       <PageTitle text="記事一覧" />
       {posts.map((post) => {
-        return <Post p={post} />;
+        return <mainPost p={post} />;
       })}
     </div>
   );

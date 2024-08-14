@@ -1,6 +1,6 @@
 import { posts } from "./post";
 
-export const Post = (props) => {
+export const mainPost = (props) => {
   const post = props.p;
   // console.log(post);
   // console.log(post.categories);
@@ -8,12 +8,12 @@ export const Post = (props) => {
     <div className="border border-black mb-4 w-4/5 mx-auto">
       <div className="p-5">
         <div className="flex justify-between">
-          <p className="">{new Date(post.createdAt).toLocaleDateString()}</p>
+          <p className="">{new Date(posts.createdAt).toLocaleDateString()}</p>
           <div className="flex">
             {/* post.categoriesが存在し、かつ配列である場合 */}
-            {post.categories &&
-              Array.isArray(post.categories) && // カテゴリーをループして表示
-              post.categories.map((category, i) => (
+            {posts.categories &&
+              Array.isArray(posts.categories) && // カテゴリーをループして表示
+              posts.categories.map((category, i) => (
                 <p
                   key={i}
                   className="border border-blue-500 rounded text-blue-500 p-2 ml-1"
