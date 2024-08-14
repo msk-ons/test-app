@@ -1,16 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {posts} from "./post";
+import { posts } from "./post";
 
 function Article() {
-  const { post.id } = useParams();
+  const { id } = useParams();
+  const article = posts.find((article) => article.id === parseInt(id));
 
-  const articles = {posts};
-
-  const article = articles.find((article) => post.id === parseInt(id));
   if (!article) {
     return <p>記事が見つかりませんでした。</p>;
   }
+
   return (
     <div>
       <header>

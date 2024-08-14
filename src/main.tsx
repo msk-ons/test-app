@@ -5,8 +5,8 @@ import { App } from "./index.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowsweRouter>
+    <BrowserRouter>
       <App />
-    </BrowsweRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
