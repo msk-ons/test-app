@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { posts } from "./post";
-import { MainPost } from "./MainPost";
+import { mainPost } from "./mainPost";
 import { PageTitle } from "./PageTitle";
 
 // export const Posts = () => {
@@ -30,7 +30,7 @@ function Posts() {
     <div className="mx-auto w-4/5">
       <PageTitle ttl="記事一覧" />
       {reports.map((report) => {
-        return <MainPost key={report.id} post={report} />;
+        return <mainPost key={report.id} post={report} />;
       })}
     </div>
   );

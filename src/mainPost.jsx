@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const MainPost = ({ post }) => {
+export const mainPost = ({ post }) => {
   return (
     <div className="border border-black mb-4 w-4/5 mx-auto">
       <Link to={`/article/${post.id}`}>
