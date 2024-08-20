@@ -13,6 +13,7 @@ function Article() {
       `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`
     )
       .then((response) => response.json())
+      // .then((data) => console.log(data))
       .then((data) => setArticle(data))
       .catch((error) => console.error("Error fetching article:", error));
   }, [id]);
