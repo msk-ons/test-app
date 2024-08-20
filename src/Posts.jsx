@@ -15,22 +15,22 @@ import { PageTitle } from "./PageTitle";
 // };
 
 function Posts() {
-  const [articles, setArticles] = useState([]);
+  const [reports, setReports] = useState([]);
 
   useEffect(() => {
     fetch(
       "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts"
     )
       .then((response) => response.json())
-      .then((data) => setArticles(data))
+      .then((data) => setReports(data))
       .catch((error) => console.error("Error fetching articles:", error));
   }, []);
 
   return (
     <div className="mx-auto w-4/5">
       <PageTitle ttl="記事一覧" />
-      {articles.map((article) => {
-        return <MainPost key={article.id} post={article} />;
+      {reports.map((report) => {
+        return <MainPost key={report.id} post={report} />;
       })}
     </div>
   );
