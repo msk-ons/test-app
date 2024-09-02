@@ -3,19 +3,23 @@ import { useParams } from "react-router-dom";
 // import { posts } from "./post";
 // import { Header } from "./page/Header";
 
-function Article() {
+export function Article() {
   const { id } = useParams();
-  // const article = posts.find((article) => article.id === parseInt(id));
   const [article, setArticle] = useState(null);
-
   useEffect(() => {
-    fetch(
-      `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`
-    )
-      .then((response) => response.json())
-      // .then((data) => console.log(data))
-      .then((data) => setArticle(data))
-      .catch((error) => console.error("Error fetching article:", error));
+    const Articles = async () => {
+      try {
+        const response = await fetch(
+          `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`
+        );
+        const data = await response.json();
+        setArticle(data.post);
+      } catch (error) {
+        console.error("Error fetching article:", error);
+      }
+    };
+
+    Articles();
   }, [id]);
 
   if (!article) {
