@@ -15,23 +15,30 @@ import { PageTitle } from "./PageTitle";
 // };
 
 function Posts() {
-  const [reports, setReports] = useState([]);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts"
-    )
-      .then((response) => response.json())
-      .then((data) => setReports(data))
-      .catch((error) => console.error("Error fetching articles:", error));
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts"
+        );
+        const data = await response.json();
+        setArticles(data.posts);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   return (
     <div className="mx-auto w-4/5">
       <PageTitle ttl="記事一覧" />
-      {reports.map((report) => {
-        return <MainPost key={report.id} post={report} />;
-      })}
+      {articles.map((article) => (
+        <MainPost key={article.id} post={article} />
+      ))}
     </div>
   );
 }
