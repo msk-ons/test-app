@@ -14,11 +14,7 @@ import { PageTitle } from "./PageTitle";
 //   );
 // };
 
-<<<<<<< HEAD
 export function Posts() {
-=======
-function Posts() {
->>>>>>> fa3986de48b24c045b4e3b8204230f7fa140123a
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
