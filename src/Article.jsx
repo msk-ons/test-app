@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { posts } from "./post";
-import { Header } from "./page/Header";
+// import { posts } from "./post";
+// import { Header } from "./page/Header";
 
-function Article() {
+export function Article() {
   const { id } = useParams();
-  const article = posts.find((article) => article.id === parseInt(id));
+  const [article, setArticle] = useState(null);
+  useEffect(() => {
+    const Articles = async () => {
+      try {
+        const response = await fetch(
+          `https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`
+        );
+        const data = await response.json();
+        setArticle(data.post);
+      } catch (error) {
+        console.error("Error fetching article:", error);
+      }
+    };
+
+    Articles();
+  }, [id]);
 
   if (!article) {
-    return <p>記事が見つかりませんでした。</p>;
+    return <p>記事を読み込んでいます....</p>;
   }
 
   return (
