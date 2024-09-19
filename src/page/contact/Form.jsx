@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../../constance";
 import { Label } from "./Label";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
 import { Error } from "./Error";
-import { API_BASE_URL } from "../../constance";
 
 export const Form = () => {
   const [name, setName] = useState("");
@@ -52,7 +52,7 @@ export const Form = () => {
     return Valid;
   };
 
-  /** フォームの送信 */
+  // フォームの送信
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -71,7 +71,7 @@ export const Form = () => {
     handleClear();
   };
 
-  /** フォームのクリア */
+  // クリア
   const handleClear = () => {
     setName("");
     setEmail("");
