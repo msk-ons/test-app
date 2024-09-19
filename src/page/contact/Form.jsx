@@ -25,7 +25,7 @@ export const Form = () => {
       nameError = "お名前は必須です。";
       Valid = false;
     } else if (name.length > 30) {
-      nameError = "お名前は30文字以内で入力してください。";
+      nameError = "お名前は30字以内で入力してください。";
       Valid = false;
     }
 
@@ -41,7 +41,7 @@ export const Form = () => {
       messageError = "本文は必須です。";
       Valid = false;
     } else if (message.length > 500) {
-      messageError = "本文は500文字以内で入力してください。";
+      messageError = "本文は500字以内で入力してください。";
       Valid = false;
     }
 
@@ -81,7 +81,7 @@ export const Form = () => {
   return (
     <div>
       <div className="max-w-[800px] mx-auto py-10">
-        <h1 className="text-xl font-bold mb-10">問合わせフォーム</h1>
+        <h1 className="text-xl font-bold mb-10">お問合わせフォーム</h1>
         <form onSubmit={handleSubmit}>
           <div className="flex justify-between items-center mb-6">
             <Label text="お名前" htmlFor="name" />
