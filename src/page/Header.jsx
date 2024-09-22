@@ -10,7 +10,7 @@ export const Header = () => {
         </Link>
 
         <Link to="./contact/Form.jsx" className="font-medium ml-auto text-base">
-          お問い合わせ{" "}
+          お問い合わせ
         </Link>
       </div>
       <Outlet />

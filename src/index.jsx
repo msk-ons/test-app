@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Posts } from "./Posts";
 import { Header } from "./page/Header";
 import { Form } from "./page/contact/Form";
@@ -11,9 +11,9 @@ export const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/" element={<Posts />} />
         <Route path="/article/:id" element={<Article />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/contact" element={<Form />} />
       </Routes>
     </>
   );
