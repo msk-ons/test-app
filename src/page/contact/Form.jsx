@@ -16,40 +16,33 @@ export const Form = () => {
 
   //  バリデーション
   const valid = () => {
-    let Valid = true;
     let nameError = "";
     let emailError = "";
     let messageError = "";
 
     if (!name) {
       nameError = "お名前は必須です。";
-      Valid = false;
     } else if (name.length > 30) {
       nameError = "お名前は30字以内で入力してください。";
-      Valid = false;
     }
 
     if (!email) {
       emailError = "メールアドレスは必須です。";
-      Valid = false;
     } else if (!email.match(/.+@.+\..+/)) {
       emailError = "メールアドレスの形式が正しくありません。";
-      Valid = false;
     }
 
     if (!message) {
       messageError = "本文は必須です。";
-      Valid = false;
     } else if (message.length > 500) {
       messageError = "本文は500字以内で入力してください。";
-      Valid = false;
     }
 
     setNameError(nameError);
     setEmailError(emailError);
     setMessageError(messageError);
 
-    return Valid;
+    return !nameError && !emailError && !messageError;
   };
 
   // フォームの送信
