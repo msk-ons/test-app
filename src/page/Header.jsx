@@ -9,7 +9,7 @@ export const Header = () => {
           ブログ
         </Link>
 
-        <Link to="./contact/Form.jsx" className="font-medium ml-auto text-base">
+        <Link to="/contact" className="font-medium ml-auto text-base">
           お問い合わせ
         </Link>
       </div>
