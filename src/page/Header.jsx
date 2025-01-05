@@ -1,14 +1,19 @@
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+
 export const Header = () => {
   return (
     <header className="bg-slate-700 text-white w">
       <div className="container flex mx-auto p-5 text-xl">
-        <a href="#home" className="font-medium ml-3">
+        <Link to="/" className="font-medium ml-3">
           ブログ
-        </a>
-        <a href="#contact" className="font-medium ml-auto text-base">
+        </Link>
+
+        <Link to="/contact" className="font-medium ml-auto text-base">
           お問い合わせ
-        </a>
+        </Link>
       </div>
+      <Outlet />
     </header>
   );
 };
