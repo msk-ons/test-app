@@ -4,7 +4,7 @@ import { Post } from "./post";
 
 export function Article() {
   const { id } = useParams<{ id: string }>();
-  console.log("Article ID:", id);
+  // console.log("Article ID:", id);
   const [article, setArticle] = useState<Post | null>(null);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import PostPage from "./Posts";
+import { PostPage } from "./Posts";
 import { Header } from "./page/Header";
 import { Form } from "./page/contact/Form";
 import { Article } from "./Article";
