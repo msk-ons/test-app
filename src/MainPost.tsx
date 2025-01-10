@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Post } from "./post";
+import { Post } from "./types/Post";
 
 interface MainPostProps {
   post: Post;

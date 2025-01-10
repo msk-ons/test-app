@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Post } from "./post";
+import { Post } from "./types/Post";
 
 export function Article() {
   const { id } = useParams<{ id: string }>();
